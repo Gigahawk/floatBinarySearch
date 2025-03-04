@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxInput = document.getElementById('search_max');
     const higherBtn = document.getElementById('higher_btn');
     const lowerBtn = document.getElementById('lower_btn');
+    const midBtn = document.getElementById('mid_btn');
 
     function setMidPoint() {
         let min = parseFloat(minInput.value);
         let max = parseFloat(maxInput.value);
-
 
         midInput.value = min + (max - min)/2
     }
@@ -17,12 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners for buttons
     higherBtn.addEventListener('click', function() {
         minInput.value = midInput.value;
-        setMidPoint()
+        setMidPoint();
     });
 
     lowerBtn.addEventListener('click', function() {
         maxInput.value = midInput.value;
-        setMidPoint()
+        setMidPoint();
     });
+
+    midBtn.addEventListener('click', function() {
+        setMidPoint();
+    })
 
 });
